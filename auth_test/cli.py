@@ -8,6 +8,10 @@ Be creative! do whatever you want!
 - Import things from your .base module
 """
 
+import google.auth
+import google.auth.transport.requests
+
+
 
 def main():  # pragma: no cover
     """
@@ -25,4 +29,12 @@ def main():  # pragma: no cover
         * List all available tasks
         * Run an application (Flask, FastAPI, Django, etc.)
     """
-    print("This will do something")
+    print("Hello un-auth")
+
+    credentials, project = google.auth.default()
+    request = google.auth.transport.requests.Request()
+    credentials.refresh(request)
+
+    print(credentials)
+    print(credentials.token)
+    print(project)
