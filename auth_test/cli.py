@@ -37,4 +37,7 @@ def main():  # pragma: no cover
 
     print(credentials)
     print(credentials.token)
+    print(credentials.valid)
     print(project)
+    print(dir(credentials))
+    print(vars(credentials))
